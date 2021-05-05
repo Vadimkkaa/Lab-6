@@ -132,7 +132,7 @@ void push_back(Tours **list) {
 
 void push(Tours** list){
 	int choice=0;
-	printf("Where would you like to add a list?\n1-At the beginning\n2-At the end\n3-Do nothing\n");
+	printf("Where would you like to add a list?\n1-At the beginning  2-At the end  3-Do nothing\n");
 	while (1) {
 		rewind(stdin);
 		if (!scanf_s("%d", &choice) || choice != 1 && choice != 2 && choice != 3)
