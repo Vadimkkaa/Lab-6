@@ -258,6 +258,7 @@ void delete_list(Tours** list) {
 		if (!(scanf("%c", &ch)))//ch==choice
 			printf("Wrong letter!Try again\n"); else break;
 	}
+	system("CLS");
 	if (ch == 'y' || ch == 'Y' && amount > 0) {
 		while (1) {
 			printf("Enter the number of list you wanna delete:\n");
@@ -268,13 +269,17 @@ void delete_list(Tours** list) {
 				continue;
 
 			if (amount < choice) {//amount of lists vs. user choice
+				system("CLS");
 				printf("We don't have this amount of lists\n");
+				Sleep(1000);
+                system("CLS");
 				continue;
 			}
 
 			else break;
 
 		}
+		system("CLS");
 		pos2 = (*list)->next;//pos 2 now goes to the first REAL list
 		if (choice == 1) {//user wanna delete the first list(remember?--choice==0 but i did choice++)
 			Tours* deletee = (*list)->next;
@@ -323,6 +328,12 @@ void delete_list(Tours** list) {
 
 
 	}
+	if (ch == 'n' || ch == 'N' && amount > 0) {
+		system("CLS");
+		printf("Ok\n");
+		Sleep(800);
+		system("CLS");
+	}
 }
 
 void printFull(Tours** list) {
@@ -331,12 +342,13 @@ void printFull(Tours** list) {
 	a = is_empty(*list);
 	system("CLS");
 	if (a == 1) {//we have lists
-		printf("Please choose the print type\n1-Stack realization\n2-Queue realization\n");
+		printf("Please choose the print type\n1-Stack realization   2-Queue realization\n");
 		while (1) {
 			rewind(stdin);
 			if (!scanf_s("%d", &choice) && choice != 1 && choice != 2)
 				printf("Wrong nummber/Try again\n"); else break;
 		}
+		system("CLS");
 		if (choice == 1) {
 			int number = 0;//number of the list
 			printf("-----------------------------------------------------------------------------------------------------------------------\n");
@@ -462,13 +474,14 @@ void Search(Tours* list) {
 	int Amount = 1;
 	int searchFlag = 0;
 	system("CLS");
-	printf("Please,choose the parameter u wanna find by\n1-Name\n2-Price\n3-Tour's start date\n4-Tour's duration\n");
+	printf("Please,choose the parameter u wanna find by\n1-Name   2-Price   3-Tour's start date   4-Tour's duration\n");
 	rewind(stdin);
 	while (1) {
 		rewind(stdin);
 		if (!scanf("%d", &choice))
 			printf("Wrong number.Try again\n"); else break;
 	}
+	system("CLS");
 	switch (choice) {
 	case 1:
 	{
@@ -622,6 +635,8 @@ void CompleteSearch(Tours* list) {
 	int Amount = 1;//for calling the function of Print
 	system("CLS");
 	printf("Enter all required aspects\n\n");
+	Sleep(1000);
+	system("CLS");
 	rewind(stdin);
 	printf("Enter the price:\n");
 	while (1) {
@@ -812,10 +827,11 @@ void FileCreate(Tours** list) {
 	arr = (char*)malloc(1 * sizeof(char));
 	system("CLS");
 	while (1) {
-		printf("Please,choose the file type\n1-Text\n2-Binary\n3-Exit\n");
+		printf("Please,choose the file type\n1-Text   2-Binary   3-Exit\n");
 		rewind(stdin);
 		scanf_s("%d", &choice);
-		if (choice == 1) {                                                              //TEXT
+		system("CLS");
+		if (choice == 1) {             //TEXT
 			printf("Please enter the file name:\n");
 			rewind(stdin);
 			while (1) {
