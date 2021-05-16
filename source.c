@@ -1,7 +1,7 @@
 #include"library.h"
 
 int is_empty(Tours*list) {
-	return (list->next==list)?0:1;//'0' for we don't have any lists '1' for we have list(s)
+	return (list->next==list)?0:1;//'0' for we don't have any lists  // '1' for we have list(s)
 }
 
 void input_data_from_push(Tours**p) {
